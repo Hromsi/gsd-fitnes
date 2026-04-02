@@ -29,12 +29,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. User can create an account, sign in, and sign out with email/password.
   2. Authenticated sessions persist across refresh and protected pages reject unauthenticated access.
   3. User data access is scoped so each user only sees their own records.
-**Plans**: 3 plans
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: Scaffold Next.js app, Tailwind setup, database schema, and Prisma integration
-- [ ] 01-02: Implement email/password authentication and protected routing
-- [ ] 01-03: Establish shared app shell, user ownership patterns, and initial seed/dev workflows
+- [ ] 01-01-PLAN.md — Scaffold the Next.js App Router, Tailwind/shadcn baseline, and Prisma auth schema
+- [ ] 01-02-PLAN.md — Implement Auth.js credentials auth, persistent sessions, signup, onboarding redirect, and protected routing
+- [ ] 01-03-PLAN.md — Build the public/auth UI, authenticated shell, and ownership-safe UX refinements
+- [ ] 01-04-PLAN.md — Add the Vitest validation baseline and Phase 1 automated test scaffolding
 
 ### Phase 2: Fitness Profile Onboarding
 **Goal**: Capture the user profile attributes needed for deterministic personalization.
@@ -115,7 +116,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation and Auth | 0/3 | Not started | - |
+| 1. Foundation and Auth | 0/4 | Not started | - |
 | 2. Fitness Profile Onboarding | 0/2 | Not started | - |
 | 3. Deterministic Plan Generator | 0/3 | Not started | - |
 | 4. Weekly Plan Experience | 0/3 | Not started | - |
