@@ -32,6 +32,8 @@ created: 2026-04-03
 - Logged-in navigation stays top-nav only, with no sidebar in this phase. Source: `01-CONTEXT.md` D-11.
 - Successful signup should feel like setup has started and route directly into onboarding. Source: `01-CONTEXT.md` D-04.
 - Mobile responsiveness is required, but visual polish is MVP-grade rather than brand-heavy. Source: `REQUIREMENTS.md` UX-02 and project constraints.
+- Landing-page display headline is the main focal point on public screens; the primary CTA is the secondary visual draw.
+- On auth screens, the form card title is the focal point and the submit button is the secondary visual draw.
 
 ---
 
@@ -139,11 +141,11 @@ Additional copy rules:
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-04-03
