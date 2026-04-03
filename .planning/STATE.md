@@ -67,6 +67,7 @@ Recent decisions affecting current work:
 
 - Consider renaming `middleware.ts` to `proxy.ts` in a future maintenance pass to match the newer Next.js convention.
 - Phase 2 context and UI contract were restored after missing planning artifacts were detected.
+- Phase 3 UI contract is now in place before planning the generator implementation.
 
 ### Blockers/Concerns
 
