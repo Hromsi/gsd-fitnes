@@ -62,9 +62,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: Model exercise-library content and seed deterministic exercise data
-- [ ] 03-02: Implement plan-template rules and weekly workout generation service
-- [ ] 03-03: Persist generated plans and connect plan creation to onboarding completion
+- [ ] 03-01-PLAN.md — Model the exercise library, seed curated content, and add query helpers
+- [ ] 03-02-PLAN.md — Implement fixed templates and the rule-based generation service
+- [ ] 03-03-PLAN.md — Persist generated plan snapshots and connect first-plan generation to the next-step flow
 
 ### Phase 4: Weekly Plan Experience
 **Goal**: Present the user's current weekly plan with clear navigation into workout details and manual regeneration.
