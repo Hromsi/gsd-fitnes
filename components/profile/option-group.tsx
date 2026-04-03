@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 
 type Option = {
@@ -11,6 +13,7 @@ type OptionGroupProps = {
   options: readonly Option[];
   selectedValue?: string;
   error?: string;
+  onValueChange?: (value: string) => void;
 };
 
 export function OptionGroup({
@@ -19,6 +22,7 @@ export function OptionGroup({
   options,
   selectedValue,
   error,
+  onValueChange,
 }: OptionGroupProps) {
   return (
     <fieldset className="space-y-3">
@@ -40,8 +44,9 @@ export function OptionGroup({
               )}
             >
               <input
-                defaultChecked={isSelected}
+                checked={isSelected}
                 className="sr-only"
+                onChange={() => onValueChange?.(option.value)}
                 name={name}
                 type="radio"
                 value={option.value}

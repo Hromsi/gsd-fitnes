@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { useRouter } from "next/navigation";
 import {
@@ -50,6 +50,10 @@ export function ProfileForm({
     values: initialValues,
   });
 
+  const [liveValues, setLiveValues] = useState<Partial<ProfileFormValues>>(
+    initialValues,
+  );
+
   useEffect(() => {
     if (!state.showSuccess || !state.redirectTo) {
       return;
@@ -81,10 +85,7 @@ export function ProfileForm({
     );
   }
 
-  const values = {
-    ...initialValues,
-    ...state.values,
-  };
+  const values = liveValues;
 
   return (
     <form action={formAction} className="space-y-6">
@@ -96,6 +97,12 @@ export function ProfileForm({
         name="goal"
         options={goalOptions}
         selectedValue={values.goal}
+        onValueChange={(value) =>
+          setLiveValues((current) => ({
+            ...current,
+            goal: value as ProfileFormValues["goal"],
+          }))
+        }
       />
 
       <OptionGroup
@@ -104,6 +111,12 @@ export function ProfileForm({
         name="fitnessLevel"
         options={fitnessLevelOptions}
         selectedValue={values.fitnessLevel}
+        onValueChange={(value) =>
+          setLiveValues((current) => ({
+            ...current,
+            fitnessLevel: value as ProfileFormValues["fitnessLevel"],
+          }))
+        }
       />
 
       <OptionGroup
@@ -112,6 +125,12 @@ export function ProfileForm({
         name="equipment"
         options={equipmentOptions}
         selectedValue={values.equipment}
+        onValueChange={(value) =>
+          setLiveValues((current) => ({
+            ...current,
+            equipment: value as ProfileFormValues["equipment"],
+          }))
+        }
       />
 
       <OptionGroup
@@ -120,6 +139,12 @@ export function ProfileForm({
         name="trainingFrequency"
         options={trainingFrequencyOptions}
         selectedValue={values.trainingFrequency}
+        onValueChange={(value) =>
+          setLiveValues((current) => ({
+            ...current,
+            trainingFrequency: value,
+          }))
+        }
       />
 
       {state.errors.form ? (

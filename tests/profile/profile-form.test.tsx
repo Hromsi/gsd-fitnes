@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { ProfileForm } from "@/components/profile/profile-form";
 
@@ -52,5 +53,30 @@ describe("profile form", () => {
     expect(screen.getByDisplayValue("gym")).toBeChecked();
     expect(screen.getByDisplayValue("4")).toBeChecked();
     expect(screen.getByRole("button", { name: "Update profile" })).toBeInTheDocument();
+  });
+
+  it("updates the highlighted option immediately when the selection changes", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <ProfileForm
+        action={vi.fn()}
+        initialValues={{
+          goal: "build_muscle",
+          fitnessLevel: "intermediate",
+          equipment: "gym",
+          trainingFrequency: "4",
+        }}
+        intent="settings"
+      />,
+    );
+
+    const maintainInput = screen.getByDisplayValue("maintain");
+
+    await user.click(maintainInput);
+
+    expect(maintainInput).toBeChecked();
+    expect(maintainInput.closest("label")).toHaveClass("bg-accent");
+    expect(screen.getByDisplayValue("build_muscle")).not.toBeChecked();
   });
 });
