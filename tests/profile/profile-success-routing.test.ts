@@ -24,7 +24,7 @@ describe("profile success routing", () => {
 
   it("renders the approved success messaging and next-step placeholder", () => {
     expect(onboardingSource).toContain("Let’s build your workout profile.");
-    expect(nextStepSource).toContain("Your profile is ready.");
+    expect(nextStepSource).toContain("Your workout plan is ready to generate.");
     expect(nextStepSource).toContain("Next up: generate your first workout plan.");
   });
 });

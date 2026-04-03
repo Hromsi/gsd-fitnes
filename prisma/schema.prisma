@@ -24,6 +24,19 @@ enum Equipment {
   gym
 }
 
+enum ExerciseCategory {
+  upper
+  lower
+  full_body
+  core
+  cardio
+}
+
+enum PlanDayType {
+  workout
+  rest
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -36,6 +49,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   profile       Profile?
+  workoutPlans  WorkoutPlan[]
 }
 
 model Profile {
@@ -49,6 +63,61 @@ model Profile {
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Exercise {
+  id          String           @id @default(cuid())
+  name        String           @unique
+  description String
+  equipment   Equipment
+  level       FitnessLevel
+  category    ExerciseCategory
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  workoutExercises WorkoutExercise[]
+}
+
+model WorkoutPlan {
+  id          String       @id @default(cuid())
+  userId      String
+  goal        Goal
+  fitnessLevel FitnessLevel
+  equipment   Equipment
+  trainingFrequency Int
+  isActive    Boolean      @default(true)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workoutDays WorkoutDay[]
+}
+
+model WorkoutDay {
+  id          String       @id @default(cuid())
+  workoutPlanId String
+  dayIndex    Int
+  dayLabel    String
+  type        PlanDayType
+  category    ExerciseCategory?
+  guidance    String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  workoutPlan WorkoutPlan  @relation(fields: [workoutPlanId], references: [id], onDelete: Cascade)
+  exercises   WorkoutExercise[]
+
+  @@unique([workoutPlanId, dayIndex])
+}
+
+model WorkoutExercise {
+  id          String      @id @default(cuid())
+  workoutDayId String
+  exerciseId  String
+  sortOrder   Int
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  workoutDay  WorkoutDay  @relation(fields: [workoutDayId], references: [id], onDelete: Cascade)
+  exercise    Exercise    @relation(fields: [exerciseId], references: [id], onDelete: Restrict)
+
+  @@unique([workoutDayId, sortOrder])
 }
 
 model Account {

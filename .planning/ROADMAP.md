@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and Auth** - Create the Next.js foundation, authentication flow, and per-user data boundaries.
 - [x] **Phase 2: Fitness Profile Onboarding** - Collect the inputs needed to personalize a workout plan.
-- [ ] **Phase 3: Deterministic Plan Generator** - Build the exercise library and rule-based 7-day plan generation logic.
+- [x] **Phase 3: Deterministic Plan Generator** - Build the exercise library and rule-based 7-day plan generation logic.
 - [ ] **Phase 4: Weekly Plan Experience** - Show the generated schedule, workout details, and manual regeneration flow.
 - [ ] **Phase 5: Progress Tracking** - Let users mark workouts complete and review completion history.
 - [ ] **Phase 6: MVP UX Polish** - Tighten responsive behavior and end-to-end usability for the MVP release.
@@ -56,15 +56,15 @@ Plans:
 **Depends on**: Phase 2
 **Requirements**: [PLAN-01, PLAN-02, PLAN-04]
 **Success Criteria** (what must be TRUE):
-  1. Completing onboarding generates a deterministic 7-day plan for the current user.
+  1. After completing onboarding, the user can explicitly generate a deterministic 7-day plan for the current user.
   2. The generated plan changes based on goal, level, equipment, and training frequency inputs.
   3. Every generated workout is composed from the predefined internal exercise library only.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Model the exercise library, seed curated content, and add query helpers
-- [ ] 03-02-PLAN.md — Implement fixed templates and the rule-based generation service
-- [ ] 03-03-PLAN.md — Persist generated plan snapshots and connect first-plan generation to the next-step flow
+- [x] 03-01-PLAN.md — Model the exercise library, seed curated content, and add query helpers
+- [x] 03-02-PLAN.md — Implement fixed templates and the rule-based generation service
+- [x] 03-03-PLAN.md — Persist generated plan snapshots and connect first-plan generation to the next-step flow
 
 ### Phase 4: Weekly Plan Experience
 **Goal**: Present the user's current weekly plan with clear navigation into workout details and manual regeneration.
@@ -118,7 +118,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 |-------|----------------|--------|-----------|
 | 1. Foundation and Auth | 4/4 | Complete | 2026-04-03 |
 | 2. Fitness Profile Onboarding | 2/2 | Complete | 2026-04-03 |
-| 3. Deterministic Plan Generator | 0/3 | Not started | - |
+| 3. Deterministic Plan Generator | 3/3 | Complete | 2026-04-04 |
 | 4. Weekly Plan Experience | 0/3 | Not started | - |
 | 5. Progress Tracking | 0/2 | Not started | - |
 | 6. MVP UX Polish | 0/2 | Not started | - |

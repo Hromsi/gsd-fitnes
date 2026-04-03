@@ -21,10 +21,10 @@
 
 ### Plan Generation
 
-- [ ] **PLAN-01**: User receives a deterministic 7-day workout plan immediately after completing onboarding.
-- [ ] **PLAN-02**: Generated plan uses the user's goal, fitness level, equipment, and training frequency as inputs.
+- [x] **PLAN-01**: User can generate a deterministic 7-day workout plan after completing onboarding.
+- [x] **PLAN-02**: Generated plan uses the user's goal, fitness level, equipment, and training frequency as inputs.
 - [ ] **PLAN-03**: User can manually regenerate a new workout plan on demand.
-- [ ] **PLAN-04**: Generated workouts use only exercises from the app's predefined exercise library.
+- [x] **PLAN-04**: Generated workouts use only exercises from the app's predefined exercise library.
 
 ### Workout Experience
 
@@ -88,9 +88,9 @@
 | PROF-02 | Phase 2 | Complete |
 | PROF-03 | Phase 2 | Complete |
 | PROF-04 | Phase 2 | Complete |
-| PLAN-01 | Phase 3 | Pending |
-| PLAN-02 | Phase 3 | Pending |
-| PLAN-04 | Phase 3 | Pending |
+| PLAN-01 | Phase 3 | Complete |
+| PLAN-02 | Phase 3 | Complete |
+| PLAN-04 | Phase 3 | Complete |
 | WORK-01 | Phase 4 | Pending |
 | WORK-02 | Phase 4 | Pending |
 | WORK-03 | Phase 4 | Pending |
@@ -107,4 +107,4 @@
 
 ---
 *Requirements defined: 2026-04-03*
-*Last updated: 2026-04-03 after initial definition*
+*Last updated: 2026-04-04 after Phase 3 execution*

@@ -1,7 +1,28 @@
 import Link from "next/link";
+import { getCurrentUser } from "@/lib/current-user";
+import { prisma } from "@/lib/prisma";
 import { EmptyState } from "@/components/ui/empty-state";
+import { GeneratePlanForm } from "@/components/workouts/generate-plan-form";
+import { generatePlanAction } from "@/app/(app)/actions/generate-plan";
 
-export default function NextStepPage() {
+export default async function NextStepPage() {
+  const currentUser = await getCurrentUser();
+
+  const activePlan = currentUser
+    ? await prisma.workoutPlan.findFirst({
+        where: {
+          userId: currentUser.id,
+          isActive: true,
+        },
+        include: {
+          workoutDays: true,
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+      })
+    : null;
+
   return (
     <div className="w-full max-w-3xl space-y-6">
       <div className="space-y-3">
@@ -9,13 +30,28 @@ export default function NextStepPage() {
           Next step
         </p>
         <h1 className="text-[28px] font-semibold leading-tight text-foreground">
-          Your profile is ready.
+          {activePlan
+            ? "Your first plan is ready."
+            : "Your workout plan is ready to generate."}
         </h1>
       </div>
 
       <EmptyState
-        title="Next up: generate your first workout plan."
-        body="Phase 3 will turn this profile into a deterministic weekly workout plan."
+        title={
+          activePlan
+            ? "Your first plan is ready. Next up: view your weekly schedule."
+            : "Next up: generate your first workout plan."
+        }
+        body={
+          activePlan
+            ? `Current active plan: ${activePlan.workoutDays.filter((day) => day.type === "workout").length} workout days in a 7-day cycle.`
+            : "Turn your saved profile into a structured weekly plan with one focused generation step."
+        }
+      />
+
+      <GeneratePlanForm
+        action={generatePlanAction}
+        hasActivePlan={Boolean(activePlan)}
       />
 
       <Link
