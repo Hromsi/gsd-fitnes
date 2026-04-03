@@ -53,7 +53,7 @@ export function GeneratePlanForm({
 
   return (
     <form action={formAction} className="space-y-4">
-      <SubmitButton disabled={hasActivePlan} />
+      {!hasActivePlan ? <SubmitButton disabled={false} /> : null}
       {state.error ? (
         <p className="text-sm leading-6 text-destructive">{state.error}</p>
       ) : null}
