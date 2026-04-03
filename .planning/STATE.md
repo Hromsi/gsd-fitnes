@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_discuss
-stopped_at: Phase 3 executed and verified
-last_updated: "2026-04-04T22:20:00.000Z"
-last_activity: 2026-04-04 - Phase 3 executed and verified for deterministic plan generator
+status: ready_to_execute
+stopped_at: Phase 4 plans finalized
+last_updated: "2026-04-04T22:45:00.000Z"
+last_activity: 2026-04-04 - Phase 4 planning completed for weekly plan experience
 progress:
   total_phases: 6
   completed_phases: 3
@@ -27,8 +27,8 @@ See: .planning/PROJECT.md (updated 2026-04-03)
 
 Phase: 4 of 6 (Weekly Plan Experience)
 Plan: 0 of 3 in current phase
-Status: Ready to discuss
-Last activity: 2026-04-04 - Phase 3 executed and verified for deterministic plan generator
+Status: Ready to execute
+Last activity: 2026-04-04 - Phase 4 planning completed for weekly plan experience
 
 Progress: [██████░░░░] 56%
 
@@ -64,18 +64,20 @@ Recent decisions affecting current work:
 - Initialization: Fixed internal exercise library with no custom workout editing in v1
 - Initialization: Mobile responsiveness is required, but production polish is not
 - Phase 3: First-plan generation is explicit from the next-step screen rather than automatic immediately after onboarding
+- Phase 4: `App` becomes the active-plan entry point while `next-step` remains fallback-only for users without a plan
 
 ### Pending Todos
 
 - Consider renaming `middleware.ts` to `proxy.ts` in a future maintenance pass to match the newer Next.js convention.
 - Run a local browser smoke test for the new next-step generation CTA and active-plan messaging.
+- Phase 4 planning artifacts were restored after the workflow reported files that did not yet exist on disk.
 
 ### Blockers/Concerns
 
-No active blockers. Local browser-based smoke testing is still useful for confirming the first-plan generation transition before Phase 4 builds the weekly schedule UI.
+No active blockers. Local browser-based smoke testing remains useful, especially once weekly cards and modal detail land during Phase 4 execution.
 
 ## Session Continuity
 
-Last session: 2026-04-04 22:20
-Stopped at: Phase 3 executed and verified
+Last session: 2026-04-04 22:45
+Stopped at: Phase 4 plans finalized
 Resume file: .planning/phases/04-weekly-plan-experience/04-CONTEXT.md
