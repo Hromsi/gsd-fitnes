@@ -38,8 +38,25 @@ export default async function OnboardingPage({
   return (
     <>
       <TopNav
-        currentPathLabel={isEditMode ? "Profile" : "Onboarding"}
-        showProfileSettingsLink={isEditMode}
+        items={
+          isEditMode
+            ? [
+                {
+                  href: "/app",
+                  label: "App",
+                },
+                {
+                  href: "/settings/profile",
+                  label: "Profile settings",
+                },
+              ]
+            : [
+                {
+                  href: "/onboarding",
+                  label: "Onboarding",
+                },
+              ]
+        }
       />
       <PageShell className="items-start py-10">
         <div className="w-full max-w-3xl space-y-6">

@@ -28,7 +28,18 @@ export default async function AppLayout({
 
   return (
     <>
-      <TopNav currentPathLabel="App" showProfileSettingsLink />
+      <TopNav
+        items={[
+          {
+            href: "/app",
+            label: "App",
+          },
+          {
+            href: "/settings/profile",
+            label: "Profile settings",
+          },
+        ]}
+      />
       <PageShell className="items-start py-10">{children}</PageShell>
     </>
   );

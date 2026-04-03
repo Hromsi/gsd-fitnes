@@ -3,16 +3,24 @@ import { describe, expect, it, vi } from "vitest";
 import { TopNav } from "@/components/layout/top-nav";
 import { EmptyState } from "@/components/ui/empty-state";
 
+vi.mock("next/navigation", () => ({
+  usePathname: () => "/onboarding",
+}));
+
 vi.mock("@/components/layout/sign-out-button", () => ({
   SignOutButton: () => <button type="button">Sign out</button>,
 }));
 
 describe("onboarding shell", () => {
   it("renders the top nav with sign-out access", () => {
-    render(<TopNav currentPathLabel="Onboarding" />);
+    render(
+      <TopNav
+        items={[{ href: "/onboarding", label: "Onboarding" }]}
+      />,
+    );
 
     expect(screen.getByText("Personalized Workout Planner")).toBeInTheDocument();
-    expect(screen.getByText("Onboarding")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Onboarding" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Sign out" })).toBeInTheDocument();
   });
 
