@@ -7,10 +7,10 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can create an account with email and password.
-- [ ] **AUTH-02**: User can sign in with email and password.
-- [ ] **AUTH-03**: User can sign out of the application.
-- [ ] **AUTH-04**: User session persists across browser refresh.
+- [x] **AUTH-01**: User can create an account with email and password.
+- [x] **AUTH-02**: User can sign in with email and password.
+- [x] **AUTH-03**: User can sign out of the application.
+- [x] **AUTH-04**: User session persists across browser refresh.
 
 ### Fitness Profile
 
@@ -41,7 +41,7 @@
 ### UX
 
 - [ ] **UX-01**: Core onboarding, planning, and workout-tracking flows work on mobile and desktop screen sizes.
-- [ ] **UX-02**: Each user only sees their own profile, plans, and workout completion history.
+- [x] **UX-02**: Each user only sees their own profile, plans, and workout completion history.
 
 ## v2 Requirements
 
@@ -79,11 +79,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
-| UX-02 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
+| UX-02 | Phase 1 | Complete |
 | PROF-01 | Phase 2 | Pending |
 | PROF-02 | Phase 2 | Pending |
 | PROF-03 | Phase 2 | Pending |
