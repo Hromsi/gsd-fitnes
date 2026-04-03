@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Create profile data model and onboarding form flow
-- [ ] 02-02: Add validation, persistence, and post-onboarding routing
+- [ ] 02-01-PLAN.md — Create the profile data model, shared onboarding/edit form, and settings entry flow
+- [ ] 02-02-PLAN.md — Finalize completion state, success feedback, and post-onboarding routing
 
 ### Phase 3: Deterministic Plan Generator
 **Goal**: Build the internal exercise library and deterministic logic that creates a 7-day plan from user inputs.
