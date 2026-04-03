@@ -8,6 +8,7 @@ type GeneratePlanState = {
   success: boolean;
   error?: string;
   planSummary?: string;
+  redirectTo?: string;
 };
 
 type GeneratePlanFormProps = {
@@ -48,8 +49,12 @@ export function GeneratePlanForm({
       return;
     }
 
+    if (state.redirectTo) {
+      router.push(state.redirectTo);
+    }
+
     router.refresh();
-  }, [router, state.success]);
+  }, [router, state.redirectTo, state.success]);
 
   return (
     <form action={formAction} className="space-y-4">

@@ -4,6 +4,7 @@ import type {
   ExerciseCategory as PrismaExerciseCategory,
   FitnessLevel,
   Goal,
+  Prisma,
   WorkoutDay,
   WorkoutExercise,
   WorkoutPlan,
@@ -57,3 +58,25 @@ export type PersistedWorkoutPlan = WorkoutPlan & {
     })[];
   })[];
 };
+
+export type ActiveWorkoutPlan = Prisma.WorkoutPlanGetPayload<{
+  include: {
+    workoutDays: {
+      include: {
+        exercises: {
+          include: {
+            exercise: true;
+          };
+          orderBy: {
+            sortOrder: "asc";
+          };
+        };
+      };
+      orderBy: {
+        dayIndex: "asc";
+      };
+    };
+  };
+}>;
+
+export type ActiveWorkoutDay = ActiveWorkoutPlan["workoutDays"][number];

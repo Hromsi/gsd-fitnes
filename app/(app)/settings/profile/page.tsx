@@ -1,8 +1,11 @@
 import { redirect } from "next/navigation";
 import { ProfileForm } from "@/components/profile/profile-form";
 import { saveProfileAction } from "@/app/(app)/actions/profile";
+import { generatePlanAction } from "@/app/(app)/actions/generate-plan";
 import { getCurrentUser } from "@/lib/current-user";
 import { profileValuesFromProfile } from "@/lib/validators/profile";
+import { getActiveWorkoutPlan } from "@/lib/workouts/get-active-plan";
+import { RegeneratePlanCard } from "@/components/workouts/regenerate-plan-card";
 
 export default async function ProfileSettingsPage() {
   const currentUser = await getCurrentUser();
@@ -10,6 +13,10 @@ export default async function ProfileSettingsPage() {
   if (!currentUser) {
     redirect("/login");
   }
+
+  const activePlan = await getActiveWorkoutPlan(currentUser.id);
+  const workoutDayCount =
+    activePlan?.workoutDays.filter((day) => day.type === "workout").length ?? 0;
 
   return (
     <div className="w-full max-w-3xl space-y-6">
@@ -32,6 +39,13 @@ export default async function ProfileSettingsPage() {
           intent="settings"
         />
       </section>
+
+      {activePlan ? (
+        <RegeneratePlanCard
+          action={generatePlanAction}
+          workoutDayCount={workoutDayCount}
+        />
+      ) : null}
     </div>
   );
 }

@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_execute
-stopped_at: Phase 4 plans finalized
-last_updated: "2026-04-04T22:45:00.000Z"
-last_activity: 2026-04-04 - Phase 4 planning completed for weekly plan experience
+status: ready_to_discuss
+stopped_at: Phase 4 executed and verified
+last_updated: "2026-04-05T00:10:00.000Z"
+last_activity: 2026-04-05 - Phase 4 executed and verified for weekly plan experience
 progress:
   total_phases: 6
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 16
-  completed_plans: 9
-  percent: 56
+  completed_plans: 12
+  percent: 75
 ---
 
 # Project State
@@ -21,22 +21,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-03)
 
 **Core value:** Give each user a clear, usable weekly workout plan that feels personalized without adding complexity or requiring coaching.
-**Current focus:** Phase 4 - Weekly Plan Experience
+**Current focus:** Phase 5 - Progress Tracking
 
 ## Current Position
 
-Phase: 4 of 6 (Weekly Plan Experience)
-Plan: 0 of 3 in current phase
-Status: Ready to execute
-Last activity: 2026-04-04 - Phase 4 planning completed for weekly plan experience
+Phase: 5 of 6 (Progress Tracking)
+Plan: 0 of 2 in current phase
+Status: Ready to discuss
+Last activity: 2026-04-05 - Phase 4 executed and verified for weekly plan experience
 
-Progress: [██████░░░░] 56%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 9
+- Total plans completed: 12
 - Average duration: -
 - Total execution time: 0.0 hours
 
@@ -47,10 +47,11 @@ Progress: [██████░░░░] 56%
 | 1 | 4 | - | - |
 | 2 | 2 | - | - |
 | 3 | 3 | - | - |
+| 4 | 3 | - | - |
 
 **Recent Trend:**
 
-- Last 5 plans: 02-01, 02-02, 03-01, 03-02, 03-03
+- Last 5 plans: 03-02, 03-03, 04-01, 04-02, 04-03
 - Trend: Stable
 
 ## Accumulated Context
@@ -65,19 +66,19 @@ Recent decisions affecting current work:
 - Initialization: Mobile responsiveness is required, but production polish is not
 - Phase 3: First-plan generation is explicit from the next-step screen rather than automatic immediately after onboarding
 - Phase 4: `App` becomes the active-plan entry point while `next-step` remains fallback-only for users without a plan
+- Phase 4: Workout day detail uses route-driven modal navigation while regenerate remains in profile settings
 
 ### Pending Todos
 
 - Consider renaming `middleware.ts` to `proxy.ts` in a future maintenance pass to match the newer Next.js convention.
-- Run a local browser smoke test for the new next-step generation CTA and active-plan messaging.
-- Phase 4 planning artifacts were restored after the workflow reported files that did not yet exist on disk.
+- Run a local browser smoke test for weekly cards, route-driven detail modal, and regenerate confirmation behavior.
 
 ### Blockers/Concerns
 
-No active blockers. Local browser-based smoke testing remains useful, especially once weekly cards and modal detail land during Phase 4 execution.
+No active blockers. Local browser-based smoke testing is still useful before Phase 5 starts layering completion state onto the weekly schedule.
 
 ## Session Continuity
 
-Last session: 2026-04-04 22:45
-Stopped at: Phase 4 plans finalized
-Resume file: .planning/phases/04-weekly-plan-experience/04-CONTEXT.md
+Last session: 2026-04-05 00:10
+Stopped at: Phase 4 executed and verified
+Resume file: .planning/phases/05-progress-tracking/05-CONTEXT.md

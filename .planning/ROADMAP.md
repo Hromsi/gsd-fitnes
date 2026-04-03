@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation and Auth** - Create the Next.js foundation, authentication flow, and per-user data boundaries.
 - [x] **Phase 2: Fitness Profile Onboarding** - Collect the inputs needed to personalize a workout plan.
 - [x] **Phase 3: Deterministic Plan Generator** - Build the exercise library and rule-based 7-day plan generation logic.
-- [ ] **Phase 4: Weekly Plan Experience** - Show the generated schedule, workout details, and manual regeneration flow.
+- [x] **Phase 4: Weekly Plan Experience** - Show the generated schedule, workout details, and manual regeneration flow.
 - [ ] **Phase 5: Progress Tracking** - Let users mark workouts complete and review completion history.
 - [ ] **Phase 6: MVP UX Polish** - Tighten responsive behavior and end-to-end usability for the MVP release.
 
@@ -77,9 +77,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Build weekly schedule page and current-plan data loading
-- [ ] 04-02: Build workout detail page with exercise descriptions and guidance
-- [ ] 04-03: Add manual regenerate flow with replacement-plan handling
+- [x] 04-01: Build weekly schedule page and current-plan data loading
+- [x] 04-02: Build workout detail page with exercise descriptions and guidance
+- [x] 04-03: Add manual regenerate flow with replacement-plan handling
 
 ### Phase 5: Progress Tracking
 **Goal**: Add lightweight completion tracking so users can record follow-through over time.
@@ -119,6 +119,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | 1. Foundation and Auth | 4/4 | Complete | 2026-04-03 |
 | 2. Fitness Profile Onboarding | 2/2 | Complete | 2026-04-03 |
 | 3. Deterministic Plan Generator | 3/3 | Complete | 2026-04-04 |
-| 4. Weekly Plan Experience | 0/3 | Not started | - |
+| 4. Weekly Plan Experience | 3/3 | Complete | 2026-04-05 |
 | 5. Progress Tracking | 0/2 | Not started | - |
 | 6. MVP UX Polish | 0/2 | Not started | - |

@@ -8,6 +8,7 @@ type GeneratePlanState = {
   success: boolean;
   error?: string;
   planSummary?: string;
+  redirectTo?: string;
 };
 
 export async function generatePlanAction(
@@ -15,7 +16,6 @@ export async function generatePlanAction(
   formData: FormData,
 ): Promise<GeneratePlanState> {
   void prevState;
-  void formData;
 
   const currentUser = await requireCurrentUser();
 
@@ -44,5 +44,9 @@ export async function generatePlanAction(
   return {
     success: true,
     planSummary: `Created a ${savedPlan.trainingFrequency}-day plan with ${savedPlan.workoutDays.filter((day) => day.type === "workout").length} workout days.`,
+    redirectTo:
+      typeof formData.get("redirectTo") === "string"
+        ? (formData.get("redirectTo") as string)
+        : "/app",
   };
 }

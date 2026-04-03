@@ -23,14 +23,14 @@
 
 - [x] **PLAN-01**: User can generate a deterministic 7-day workout plan after completing onboarding.
 - [x] **PLAN-02**: Generated plan uses the user's goal, fitness level, equipment, and training frequency as inputs.
-- [ ] **PLAN-03**: User can manually regenerate a new workout plan on demand.
+- [x] **PLAN-03**: User can manually regenerate a new workout plan on demand.
 - [x] **PLAN-04**: Generated workouts use only exercises from the app's predefined exercise library.
 
 ### Workout Experience
 
-- [ ] **WORK-01**: User can view a weekly schedule of the current 7-day workout plan.
-- [ ] **WORK-02**: User can open a workout detail page from the weekly schedule.
-- [ ] **WORK-03**: Workout detail page shows exercise names, order, sets/reps or duration guidance, and text descriptions.
+- [x] **WORK-01**: User can view a weekly schedule of the current 7-day workout plan.
+- [x] **WORK-02**: User can open a workout detail page from the weekly schedule.
+- [x] **WORK-03**: Workout detail page shows exercise names, order, sets/reps or duration guidance, and text descriptions.
 
 ### Progress Tracking
 
@@ -91,10 +91,10 @@
 | PLAN-01 | Phase 3 | Complete |
 | PLAN-02 | Phase 3 | Complete |
 | PLAN-04 | Phase 3 | Complete |
-| WORK-01 | Phase 4 | Pending |
-| WORK-02 | Phase 4 | Pending |
-| WORK-03 | Phase 4 | Pending |
-| PLAN-03 | Phase 4 | Pending |
+| WORK-01 | Phase 4 | Complete |
+| WORK-02 | Phase 4 | Complete |
+| WORK-03 | Phase 4 | Complete |
+| PLAN-03 | Phase 4 | Complete |
 | PROG-01 | Phase 5 | Pending |
 | PROG-02 | Phase 5 | Pending |
 | PROG-03 | Phase 5 | Pending |
@@ -107,4 +107,4 @@
 
 ---
 *Requirements defined: 2026-04-03*
-*Last updated: 2026-04-04 after Phase 3 execution*
+*Last updated: 2026-04-05 after Phase 4 execution*
