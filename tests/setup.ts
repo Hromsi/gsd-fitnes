@@ -6,7 +6,16 @@ vi.mock("next/link", () => ({
   default: ({
     children,
     href,
+    replace,
     ...props
-  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) =>
-    React.createElement("a", { href, ...props }, children),
+  }: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+    replace?: boolean;
+  }) => {
+    void replace;
+
+    return (
+      React.createElement("a", { href, ...props }, children)
+    );
+  },
 }));
