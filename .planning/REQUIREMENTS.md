@@ -14,10 +14,10 @@
 
 ### Fitness Profile
 
-- [ ] **PROF-01**: User can create a fitness profile with a primary goal of lose weight, build muscle, or maintain.
-- [ ] **PROF-02**: User can set fitness level as beginner or intermediate.
-- [ ] **PROF-03**: User can choose available equipment as none, home, or gym.
-- [ ] **PROF-04**: User can choose a training frequency from 3 to 5 days per week.
+- [x] **PROF-01**: User can create a fitness profile with a primary goal of lose weight, build muscle, or maintain.
+- [x] **PROF-02**: User can set fitness level as beginner or intermediate.
+- [x] **PROF-03**: User can choose available equipment as none, home, or gym.
+- [x] **PROF-04**: User can choose a training frequency from 3 to 5 days per week.
 
 ### Plan Generation
 
@@ -84,10 +84,10 @@
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
 | UX-02 | Phase 1 | Complete |
-| PROF-01 | Phase 2 | Pending |
-| PROF-02 | Phase 2 | Pending |
-| PROF-03 | Phase 2 | Pending |
-| PROF-04 | Phase 2 | Pending |
+| PROF-01 | Phase 2 | Complete |
+| PROF-02 | Phase 2 | Complete |
+| PROF-03 | Phase 2 | Complete |
+| PROF-04 | Phase 2 | Complete |
 | PLAN-01 | Phase 3 | Pending |
 | PLAN-02 | Phase 3 | Pending |
 | PLAN-04 | Phase 3 | Pending |

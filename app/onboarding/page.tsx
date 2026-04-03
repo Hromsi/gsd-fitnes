@@ -1,9 +1,11 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { getCurrentUser } from "@/lib/current-user";
+import { saveProfileAction } from "@/app/(app)/actions/profile";
+import { ProfileForm } from "@/components/profile/profile-form";
 import { PageShell } from "@/components/layout/page-shell";
 import { TopNav } from "@/components/layout/top-nav";
-import { EmptyState } from "@/components/ui/empty-state";
+import { profileValuesFromProfile } from "@/lib/validators/profile";
 
 type OnboardingPageProps = {
   searchParams?: Promise<{
@@ -26,32 +28,38 @@ export default async function OnboardingPage({
     redirect("/login");
   }
 
-  if (currentUser.profile?.setupCompleted) {
-    redirect("/app");
-  }
-
   const params = searchParams ? await searchParams : undefined;
-  const message = params?.message ?? "Account created. Let’s set up your plan.";
+  const isEditMode = currentUser.profile?.setupCompleted === true;
+  const message = params?.message ??
+    (isEditMode
+      ? "You can update your saved profile here anytime."
+      : "Account created. Let’s set up your plan.");
 
   return (
     <>
-      <TopNav currentPathLabel="Onboarding" />
+      <TopNav
+        currentPathLabel={isEditMode ? "Profile" : "Onboarding"}
+        showProfileSettingsLink={isEditMode}
+      />
       <PageShell className="items-start py-10">
         <div className="w-full max-w-3xl space-y-6">
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
-              Onboarding
+              {isEditMode ? "Profile settings" : "Onboarding"}
             </p>
             <h1 className="text-[28px] font-semibold leading-tight text-foreground">
-              Your fitness profile starts here.
+              Let’s build your workout profile.
             </h1>
             <p className="text-base leading-6 text-muted">{message}</p>
           </div>
 
-          <EmptyState
-            title="Profile setup is next"
-            body="Phase 2 will collect your goal, fitness level, equipment, and training frequency here."
-          />
+          <section className="rounded-[1.75rem] border border-border bg-surface px-6 py-8 shadow-[0_24px_60px_rgba(33,53,45,0.08)] sm:px-8">
+            <ProfileForm
+              action={saveProfileAction}
+              initialValues={profileValuesFromProfile(currentUser.profile)}
+              intent={isEditMode ? "settings" : "onboarding"}
+            />
+          </section>
         </div>
       </PageShell>
     </>

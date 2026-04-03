@@ -21,7 +21,7 @@ async function main() {
         create: {
           goal: "build_muscle",
           fitnessLevel: "beginner",
-          equipmentAccess: "home",
+          equipment: "home",
           trainingFrequency: 3,
           setupCompleted: false,
         },

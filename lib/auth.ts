@@ -111,5 +111,6 @@ export const authConfig: NextAuthConfig = {
   },
 };
 
-export const { handlers, auth, signIn, signOut } = NextAuth(authConfig);
+export const { handlers, auth, signIn, signOut, unstable_update } =
+  NextAuth(authConfig);
 export const { GET, POST } = handlers;

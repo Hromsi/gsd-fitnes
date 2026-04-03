@@ -7,6 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Goal {
+  lose_weight
+  build_muscle
+  maintain
+}
+
+enum FitnessLevel {
+  beginner
+  intermediate
+}
+
+enum Equipment {
+  none
+  home
+  gym
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -24,9 +41,9 @@ model User {
 model Profile {
   id                String   @id @default(cuid())
   userId            String   @unique
-  goal              String?
-  fitnessLevel      String?
-  equipmentAccess   String?
+  goal              Goal?
+  fitnessLevel      FitnessLevel?
+  equipment         Equipment?
   trainingFrequency Int?
   setupCompleted    Boolean  @default(false)
   createdAt         DateTime @default(now())

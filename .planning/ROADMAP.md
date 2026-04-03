@@ -13,7 +13,7 @@ This roadmap builds the MVP from foundation to a usable personal workout-plannin
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation and Auth** - Create the Next.js foundation, authentication flow, and per-user data boundaries.
-- [ ] **Phase 2: Fitness Profile Onboarding** - Collect the inputs needed to personalize a workout plan.
+- [x] **Phase 2: Fitness Profile Onboarding** - Collect the inputs needed to personalize a workout plan.
 - [ ] **Phase 3: Deterministic Plan Generator** - Build the exercise library and rule-based 7-day plan generation logic.
 - [ ] **Phase 4: Weekly Plan Experience** - Show the generated schedule, workout details, and manual regeneration flow.
 - [ ] **Phase 5: Progress Tracking** - Let users mark workouts complete and review completion history.
@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Create the profile data model, shared onboarding/edit form, and settings entry flow
-- [ ] 02-02-PLAN.md — Finalize completion state, success feedback, and post-onboarding routing
+- [x] 02-01-PLAN.md — Create the profile data model, shared onboarding/edit form, and settings entry flow
+- [x] 02-02-PLAN.md — Finalize completion state, success feedback, and post-onboarding routing
 
 ### Phase 3: Deterministic Plan Generator
 **Goal**: Build the internal exercise library and deterministic logic that creates a 7-day plan from user inputs.
@@ -117,7 +117,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation and Auth | 4/4 | Complete | 2026-04-03 |
-| 2. Fitness Profile Onboarding | 0/2 | Not started | - |
+| 2. Fitness Profile Onboarding | 2/2 | Complete | 2026-04-03 |
 | 3. Deterministic Plan Generator | 0/3 | Not started | - |
 | 4. Weekly Plan Experience | 0/3 | Not started | - |
 | 5. Progress Tracking | 0/2 | Not started | - |

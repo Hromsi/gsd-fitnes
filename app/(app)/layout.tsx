@@ -28,7 +28,7 @@ export default async function AppLayout({
 
   return (
     <>
-      <TopNav currentPathLabel="App" />
+      <TopNav currentPathLabel="App" showProfileSettingsLink />
       <PageShell className="items-start py-10">{children}</PageShell>
     </>
   );
