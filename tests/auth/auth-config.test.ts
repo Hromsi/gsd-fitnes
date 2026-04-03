@@ -13,10 +13,11 @@ describe("auth config", () => {
   );
 
   it("uses credentials auth with persistent database sessions", () => {
-    expect(authSource).toContain('strategy: "database"');
+    expect(authSource).toContain('strategy: "jwt"');
     expect(authSource).toContain("maxAge: 31536000");
     expect(authSource).toContain("Credentials(");
     expect(authSource).toContain("PrismaAdapter");
+    expect(authSource).toContain("jwt: async");
     expect(authSource).toContain('signIn: "/login"');
   });
 

@@ -8,7 +8,7 @@ import { authSchema } from "@/lib/validators/auth";
 export const authConfig: NextAuthConfig = {
   adapter: PrismaAdapter(prisma),
   session: {
-    strategy: "database",
+    strategy: "jwt",
     maxAge: 31536000,
     updateAge: 86400,
   },
@@ -61,10 +61,49 @@ export const authConfig: NextAuthConfig = {
     }),
   ],
   callbacks: {
-    session: async ({ session, user }) => {
+    jwt: async ({ token, user, trigger }) => {
+      if (user) {
+        token.sub = user.id;
+        token.email = user.email;
+        token.name = user.name;
+        token.picture = user.image;
+        token.setupCompleted = user.setupCompleted ?? false;
+      }
+
+      if (trigger === "update" && token.sub) {
+        const currentUser = await prisma.user.findUnique({
+          where: {
+            id: token.sub,
+          },
+          select: {
+            email: true,
+            name: true,
+            image: true,
+            profile: {
+              select: {
+                setupCompleted: true,
+              },
+            },
+          },
+        });
+
+        if (currentUser) {
+          token.email = currentUser.email;
+          token.name = currentUser.name;
+          token.picture = currentUser.image;
+          token.setupCompleted = currentUser.profile?.setupCompleted ?? false;
+        }
+      }
+
+      return token;
+    },
+    session: async ({ session, token }) => {
       if (session.user) {
-        session.user.id = user.id;
-        session.user.setupCompleted = user.profile?.setupCompleted ?? false;
+        session.user.id = token.sub ?? "";
+        session.user.email = typeof token.email === "string" ? token.email : "";
+        session.user.name = typeof token.name === "string" ? token.name : null;
+        session.user.image = typeof token.picture === "string" ? token.picture : null;
+        session.user.setupCompleted = token.setupCompleted === true;
       }
 
       return session;
